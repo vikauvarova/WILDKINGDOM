@@ -1,0 +1,237 @@
+//====================================================================================================
+.footer {
+	position: relative;
+	padding: toRem(0) toRem(0) toRem(0) toRem(0);
+	background: $bgDark;
+	color: $bgGold;
+	&::before,&::after{
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: toRem(174);
+		@media (max-width:em(1640)){
+			  opacity: 0.1;
+		}
+	}
+	&::before{
+		content: "";
+		left: 0;
+		bottom: 0;
+		background: url("@img/footer-decor.svg") left bottom no-repeat;
+
+	}
+	&::after {
+		content: "";
+		right: 0;
+		top: 0;
+		transform: rotate(-180deg);
+		background: url("@img/footer-decor.svg") left bottom no-repeat;
+		@media (max-width:$tablet){
+			order: 2;
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 5;
+	}
+
+	&__body {
+		@include adaptiveValue ("padding-top", 92, 40);
+		@include adaptiveValue ("padding-bottom", 45, 30);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@media (max-width:$tablet){
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width:$mobile){
+			 grid-template-columns: auto; 
+		}
+	}
+
+	&__content {
+		@include adaptiveValue("padding-right", 40, 15);
+		@media (max-width:$tablet){
+			order: 2;
+		}
+		@media (min-width:$tablet){
+			border-right: toRem(1) solid $bgGold;
+		}
+		@media (max-width:$mobile){
+			 order: 3; 
+		}
+	}
+
+	&__menu {
+		&:not(:last-child){
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+	}
+
+	&__social {
+
+	}
+
+	&__logo {
+		justify-self: center;
+		@include adaptiveValue("width", 287, 80);
+		@media (max-width: $tablet){
+			order: 1;
+			grid-column: span 2;
+			@include adaptiveValue("margin-bottom", 40, 15);
+		}
+		@media (max-width:$mobile){
+			grid-column: span 1;
+		}
+	}
+
+	&__subscribe {
+		@media (max-width:$tablet){
+			order: 3;
+		}
+		@media (max-width:$mobile){
+			 order: 2; 
+			 @include adaptiveValue("margin-bottom", 40, 15);
+		}
+	}
+
+	&__copy {
+		border-top: toRem(1) solid $bgGold;
+		text-align: center;
+		line-height: 120%;
+		@include adaptiveValue ("padding-top", 42, 15);
+		@include adaptiveValue ("padding-bottom", 42, 15);
+		}
+}
+.menu-footer {
+
+	&__title {
+		list-style: none;
+		font-family: "Italiana";
+		font-size: toRem(20);
+		text-transform: capitalize;
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+		&:not(:last-child){
+			margin-bottom: toRem(15);
+		}
+		._spoller-init &{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			 &::after {
+				display: flex;
+				justify-content: end;
+				@extend %ic;
+				width: toRem(20);
+				overflow: hidden;
+				content: "\e905";
+				transform: rotate(90deg)
+			 }
+		}
+	}
+
+	&__list {
+		display: flex;
+		row-gap: toRem(3);
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 42, 15);
+	}
+
+	&__item {
+	}
+
+	&__link {
+		font-weight: 300;
+		line-height: 156%;
+		display: inline-block;
+		transition: color 0.3s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $goldColorHover;
+			}
+		}
+	}
+}
+.social {
+	display: flex;
+	flex-wrap: wrap;
+	@include adaptiveValue("column-gap", 41, 15);
+	@media (max-width:$mobileSmall){
+		justify-content: space-between;
+	}
+	&__item {
+		font-size: toRem(24);
+		transition: color 0.3s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $goldColorHover;
+			}
+		}
+	}
+}
+
+.footer {
+
+	&__logo {
+		justify-self: center;
+		align-self: center;
+		@include adaptiveValue("width", 237, 80);
+	}
+}
+.subscribe {
+	@include adaptiveValue("padding-left", 40, 15, 2, $containerWidth, 767.98);
+	@media (min-width:$mobile){
+		border-left: toRem(1) solid $bgGold; 
+		display: grid;
+		justify-items: end;
+	}
+	&__body{
+		@media (min-width:$mobile){
+			max-width: toRem(350);
+		}
+	}
+	&__title {
+		font-family: "Italiana";
+		@include adaptiveValue("font-size", 32, 18);
+		text-transform: capitalize;
+		line-height: 120%;
+		&:not(:last-child){
+			@include adaptiveValue("margin-bottom", 25, 10);
+		}
+	}
+
+	&__form {
+		display: flex;
+		height: toRem(40);
+		border-bottom: toRem(1) solid rgba(193, 171, 129, 0.2);
+		position: relative;
+		.form__error{
+			position: absolute;
+			bottom: 0;
+			top: 100%;
+			left: 0;
+			font-size: toRem(11);
+			color: red;
+			margin-top: toRem(5);
+		}
+	}
+
+	&__input {
+	}
+
+	&__button {
+		transition: color 0.3s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $goldColorHover;
+			}
+		}
+	}
+}
+
+
+//====================================================================================================
