@@ -7,6 +7,54 @@
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
+				<section data-watch="navigator" class="hero">
+					<div class="hero__container">
+						<div class="hero__body">
+							<div class="hero__content">
+								<h1 class="hero__title">A better world for pets</h1>
+								<a href="#" class="hero__button button button--border"><span>Explore</span></a>
+							</div>
+						</div>
+						<div class="hero__slider swiper">
+							<div class="hero__wrapper swiper-wrapper">
+								<div class="hero__slide slide-hero swiper-slide">
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/hero/pets/01.png" class="slide-hero__image" alt="Image">
+										</div>
+									</div>
+								</div>
+								<div class="hero__slide slide-hero swiper-slide">
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/hero/pets/02.png" class="slide-hero__image" alt="Image">
+										</div>
+									</div>
+								</div>
+								<div class="hero__slide slide-hero swiper-slide">
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/hero/pets/03.png" class="slide-hero__image" alt="Image">
+										</div>
+									</div>
+								</div>
+								<div class="hero__slide slide-hero swiper-slide">
+									<div data-swiper-parallax-x="40%" data-swiper-parallax-scale="0.2" class="slide-hero__content">
+										<div class="slide-hero__body">
+											<img src="@img/hero/pets/04.png" class="slide-hero__image" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="hero__controll">
+							<button type="button" class="hero__arrow hero__arrow--left _icon-slider-arrow"></button>
+							<button type="button" class="hero__arrow hero__arrow--right _icon-slider-arrow"></button>
+						</div>
+					</div>
+					<img class="hero__bg" src="@img/hero/bg.jpg" alt="Hero Background">
+					<a href="#" data-goto=".hero" class="up _icon-slider-arrow"></a>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

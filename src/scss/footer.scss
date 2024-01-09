@@ -79,7 +79,7 @@
 		@media (max-width: $tablet){
 			order: 1;
 			grid-column: span 2;
-			@include adaptiveValue("margin-bottom", 40, 15);
+			@include adaptiveValue("margin-bottom", 40, 30);
 		}
 		@media (max-width:$mobile){
 			grid-column: span 1;
@@ -92,7 +92,7 @@
 		}
 		@media (max-width:$mobile){
 			 order: 2; 
-			 @include adaptiveValue("margin-bottom", 40, 15);
+			 @include adaptiveValue("margin-bottom", 40, 30);
 		}
 	}
 
@@ -129,8 +129,15 @@
 				width: toRem(20);
 				overflow: hidden;
 				content: "\e905";
-				transform: rotate(90deg)
+				transition: transform 0.3s;
+				transform: rotate(90deg);
 			 }
+		}
+
+		&._spoller-active {
+			&::after{
+				transform: rotate(-90deg);
+			}
 		}
 	}
 
@@ -139,6 +146,11 @@
 		row-gap: toRem(3);
 		flex-wrap: wrap;
 		@include adaptiveValue("column-gap", 42, 15);
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 flex-wrap: nowrap; 
+			 row-gap: toRem(20);
+		}
 	}
 
 	&__item {
